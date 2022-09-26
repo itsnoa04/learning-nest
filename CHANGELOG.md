@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/itsnoa04/learning-nest/compare/v0.0.3...v0.0.4) (2022-09-26)
+
+
+### Bug Fixes
+
+* create users ([b2feead](https://github.com/itsnoa04/learning-nest/commit/b2feead33908bc7aec324ada5202adc67d5acf5d))
+
 ### [0.0.3](https://github.com/itsnoa04/learning-nest/compare/v0.0.2...v0.0.3) (2022-09-26)
 
 
