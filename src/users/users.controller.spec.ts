@@ -15,4 +15,12 @@ describe('UsersController', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
+
+  it('should return an array of users', () => {
+    expect(controller.getUsers()).toBeInstanceOf(Array);
+  });
+
+  it('should return a single user', () => {
+    expect(controller.getUserById('1')).toBeInstanceOf(Object);
+  });
 });

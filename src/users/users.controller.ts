@@ -1,19 +1,25 @@
-import { Controller, Get, Param } from '@nestjs/common';
-
-const users = [
-  { id: 1, name: 'John Doe' },
-  { id: 2, name: 'Jane Doe' },
-];
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto';
+import { User } from './entities/user.entity';
+import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
+  constructor(private usersService: UsersService) {}
+
   @Get()
-  getUsers(): any {
-    return users;
+  getUsers(): User[] {
+    return this.usersService.findAll();
   }
 
   @Get(':id')
-  getUserById(@Param('id') id: string): any {
-    return users.find((user) => user.id === parseInt(id));
+  getUserById(@Param('id') id: string): User {
+    //Todo : auto parse to id
+    return this.usersService.findOne(id);
+  }
+
+  @Post()
+  createUser(@Body('name') body: CreateUserDto): User {
+    return this.usersService.create(body);
   }
 }

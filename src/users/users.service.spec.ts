@@ -15,4 +15,12 @@ describe('UsersService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should return an array of users', () => {
+    expect(service.findAll()).toBeInstanceOf(Array);
+  });
+
+  it('should return a single user', () => {
+    expect(service.findOne('1')).toBeInstanceOf(Object);
+  });
 });
